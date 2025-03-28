@@ -37,6 +37,14 @@ resource "proxmox_virtual_environment_vm" "ubuntu" {
     }
   }
 
+  cpu {
+    cores = 2
+  }
+
+  memory {
+    dedicated = 2048
+  }
+
   disk {
     datastore_id = "local-lvm"
     file_id      = proxmox_virtual_environment_download_file.ubuntu_cloud_image.id
@@ -44,6 +52,15 @@ resource "proxmox_virtual_environment_vm" "ubuntu" {
     iothread     = true
     discard      = "on"
     size         = 20
+  }
+  disk {
+    datastore_id = "local-lvm"
+    interface    = "virtio1"
+    iothread     = true
+    replicate = false
+    discard      = "on"
+    file_format = "raw"
+    size         = 30
   }
 
   network_device {
