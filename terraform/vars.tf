@@ -1,5 +1,5 @@
 variable "ssh_key" {
-  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIYRwi7Z7OQPLPrjkdfPk0oV976CYNDNj5SMblKy/hjK sysadmin@A326-02"
+  default = ""
 }
 variable "proxmox_host" {
   default = "tiim1"
@@ -16,5 +16,5 @@ variable "proxmox_password" {
 }
 
 variable "proxmox_endpoint" {
-    default = "https://192.168.111.161:8006/api2/json"
+    default = "https://xxx.xxx.xxx.xxx:8006/api2/json"
 }
